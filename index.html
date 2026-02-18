@@ -338,8 +338,6 @@ body.theme-gold{--bg:#080600;--p1:#0e0c00;--p2:#141000;--p3:#1c1600;--p4:#241e00
     <div class="bs-item" onclick="closeMenu();openSettings()"><span class="bs-ic">⚙️</span>Настройки</div>
     <div class="bs-item" onclick="closeMenu();openHardPlus()"><span class="bs-ic">⭐</span>Hard+ <span class="hp-badge" id="menuHPBadge" style="display:none;margin-left:8px;">ACTIVE</span></div>
     <div class="bs-item" onclick="closeMenu();showOnlineUsers()"><span class="bs-ic">🟢</span>Онлайн</div>
-    <div class="bs-item" onclick="closeMenu();openFavorites()"><span class="bs-ic">⭐</span>Избранные</div>
-    <div class="bs-item" onclick="closeMenu();openMediaGallery()"><span class="bs-ic">🖼️</span>Медиагалерея</div>
     <div class="bs-item" onclick="closeMenu();openChatStats()"><span class="bs-ic">📊</span>Статистика чата</div>
     <div class="bs-item" onclick="closeMenu();exportChat()"><span class="bs-ic">📥</span>Экспорт чата</div>
     <div class="bs-div"></div>
@@ -357,8 +355,6 @@ body.theme-gold{--bg:#080600;--p1:#0e0c00;--p2:#141000;--p3:#1c1600;--p4:#241e00
     <div class="bs-item" onclick="closeChatAct();openStickers()"><span class="bs-ic">🎭</span>Стикеры</div>
     <div class="bs-item" onclick="closeChatAct();trigFile()"><span class="bs-ic">📎</span>Файл / фото</div>
     <div class="bs-item" id="sdActBtn" onclick="closeChatAct();toggleSelfDestruct()"><span class="bs-ic">💣</span><span id="sdActTxt">Самоудаление OFF</span></div>
-    <div class="bs-item" onclick="closeChatAct();openMediaGallery()"><span class="bs-ic">🖼️</span>Медиагалерея чата</div>
-    <div class="bs-item" onclick="closeChatAct();openAutoResp()"><span class="bs-ic">🤖</span>Автоответ <span id="autoRespStatus2" style="margin-left:auto;font-size:12px;color:var(--txt3);"></span></div>
     <div class="bs-item" onclick="closeChatAct();openUserProfile()"><span class="bs-ic">👤</span>Профиль собеседника</div>
     <div class="bs-item" onclick="closeChatAct();toggleChatSearch()"><span class="bs-ic">🔍</span>Поиск по чату</div>
     <div class="bs-item" onclick="closeChatAct();confirmDelChat()"><span class="bs-ic" style="color:#ef9a9a;">🗑️</span><span style="color:#ef9a9a;">Удалить чат</span></div>
@@ -606,16 +602,7 @@ body.theme-gold{--bg:#080600;--p1:#0e0c00;--p2:#141000;--p3:#1c1600;--p4:#241e00
 <!-- GIF -->
 <div class="mo" id="gifMo"><div class="mc">
   <div class="mc-t">GIF 🎬</div>
-  <input class="gif-search" id="gifSearchI" placeholder="Поиск GIF... (рус или eng)" oninput="searchGif(this.value)" autocomplete="off">
-  <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px;">
-    <button onclick="quickGif('мем')" style="padding:5px 10px;background:var(--p3);border:1px solid var(--p4);border-radius:14px;color:var(--txt2);font-size:13px;cursor:pointer;">мем</button>
-    <button onclick="quickGif('LOL')" style="padding:5px 10px;background:var(--p3);border:1px solid var(--p4);border-radius:14px;color:var(--txt2);font-size:13px;cursor:pointer;">LOL</button>
-    <button onclick="quickGif('нет')" style="padding:5px 10px;background:var(--p3);border:1px solid var(--p4);border-radius:14px;color:var(--txt2);font-size:13px;cursor:pointer;">нет</button>
-    <button onclick="quickGif('да')" style="padding:5px 10px;background:var(--p3);border:1px solid var(--p4);border-radius:14px;color:var(--txt2);font-size:13px;cursor:pointer;">да</button>
-    <button onclick="quickGif('wow')" style="padding:5px 10px;background:var(--p3);border:1px solid var(--p4);border-radius:14px;color:var(--txt2);font-size:13px;cursor:pointer;">wow</button>
-    <button onclick="quickGif('огонь')" style="padding:5px 10px;background:var(--p3);border:1px solid var(--p4);border-radius:14px;color:var(--txt2);font-size:13px;cursor:pointer;">🔥</button>
-    <button onclick="quickGif('fail')" style="padding:5px 10px;background:var(--p3);border:1px solid var(--p4);border-radius:14px;color:var(--txt2);font-size:13px;cursor:pointer;">fail</button>
-  </div>
+  <input class="gif-search" id="gifSearchI" placeholder="Поиск GIF..." oninput="searchGif(this.value)" autocomplete="off">
   <div id="gifGrid"></div>
   <div class="mac" style="margin-top:10px;"><button class="mbtn sec" onclick="cm2('gifMo')">Закрыть</button></div>
 </div></div>
@@ -662,7 +649,7 @@ let gifTO=null;
 const S=JSON.parse(localStorage.getItem('hard_s')||'{"sound":true}');
 
 const W=window;
-const expose={doLogin,doRegister,sendMsg,logoutUser,filterC,openMenu,closeMenu,openSettings,openMyProfile,openUserProfile,cm2,confirmDelChat,delChat,showOnlineUsers,trigFile,sendFile,showSc,sv,changeAvatar,toggleOnlineSt,previewImg,closeImgPrev,clearReply,clearPin,scrollToPin,scrollToBottom,toggleChatSearch,closeChatSearch,searchMsgs,navSearch,addReaction,setReply,pinMsg,exportChat,startVoiceRec,stopVoiceRec,cancelVoice,sendVoice,playVoice,voiceSeek,openHardPlus,activateHardPlus,setTheme,openStickers,sendSticker,openGif,searchGif,sendGif,loadGifs,quickGif,openChatStats,applyUserTitle,clearUserTitle,setTitleColor,applyStatusText,quickStatus,goBack,openChatAct,closeChatAct,toggleSelfDestruct,hideCxbs};
+const expose={doLogin,doRegister,sendMsg,logoutUser,filterC,openMenu,closeMenu,openSettings,openMyProfile,openUserProfile,cm2,confirmDelChat,delChat,showOnlineUsers,trigFile,sendFile,showSc,sv,changeAvatar,toggleOnlineSt,previewImg,closeImgPrev,clearReply,clearPin,scrollToPin,scrollToBottom,toggleChatSearch,closeChatSearch,searchMsgs,navSearch,addReaction,setReply,pinMsg,exportChat,startVoiceRec,stopVoiceRec,cancelVoice,sendVoice,playVoice,voiceSeek,openHardPlus,activateHardPlus,setTheme,openStickers,sendSticker,openGif,searchGif,sendGif,openChatStats,applyUserTitle,clearUserTitle,setTitleColor,applyStatusText,quickStatus,goBack,openChatAct,closeChatAct,toggleSelfDestruct,hideCxbs};
 Object.assign(W,expose);
 
 setTimeout(()=>{const gl=document.getElementById('gload');gl.style.opacity='0';setTimeout(()=>{gl.style.display='none';showSc('lw');},400);},1100);
@@ -909,41 +896,14 @@ function closeChatSearch(){document.getElementById('chatSB').style.display='none
 function searchMsgs(q){srchResults=[];srchI=0;if(!q.trim()){document.getElementById('srchInfo').textContent='';return;}const ql=q.toLowerCase();document.querySelectorAll('.mb').forEach(el=>{if(el.textContent.toLowerCase().includes(ql))srchResults.push(el);});document.getElementById('srchInfo').textContent=srchResults.length?`${srchResults.length}`:'—';if(srchResults.length)navSearch(0,true);}
 function navSearch(dir,init=false){if(!srchResults.length)return;if(!init)srchI=((srchI+dir)+srchResults.length)%srchResults.length;srchResults[srchI].scrollIntoView({behavior:'smooth',block:'center'});srchResults[srchI].style.outline='1px solid var(--red)';setTimeout(()=>{if(srchResults[srchI])srchResults[srchI].style.outline='';},1200);}
 
-/* GIF — Tenor API v2 */
-let gifTO=null,gifPage=0,lastGifQ='мем';
-function openGif(){if(!CC)return toast('Сначала открой чат','err');om2('gifMo');document.getElementById('gifSearchI').value='';gifPage=0;lastGifQ='мем';loadGifs('мем');}
-function searchGif(q){clearTimeout(gifTO);gifPage=0;lastGifQ=q||'мем';gifTO=setTimeout(()=>loadGifs(lastGifQ),500);}
-async function loadGifs(q,append=false){
-  const grid=document.getElementById('gifGrid');
-  if(!append)grid.innerHTML='<div style="color:var(--txt3);font-size:12px;padding:14px;text-align:center;grid-column:1/-1;">Загрузка...</div>';
-  const TKEY='AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCY0';
-  const limit=9;
-  try{
-    const r=await fetch(`https://tenor.googleapis.com/v2/search?q=${encodeURIComponent(q)}&key=${TKEY}&limit=${limit}&pos=${gifPage*limit}&media_filter=tinygif,gif&contentfilter=medium`);
-    if(!r.ok)throw new Error('HTTP '+r.status);
-    const d=await r.json();
-    if(!append)grid.innerHTML='';
-    if(!d.results||!d.results.length){if(!append)grid.innerHTML='<div style="color:var(--txt3);font-size:12px;padding:14px;text-align:center;grid-column:1/-1;">Ничего 🤷</div>';return;}
-    d.results.forEach(g=>{
-      const tiny=g.media_formats?.tinygif?.url||g.media_formats?.gif?.url||'';
-      const full=g.media_formats?.gif?.url||tiny;if(!tiny)return;
-      const img=document.createElement('img');img.src=tiny;img.loading='lazy';
-      img.style.cssText='width:100%;height:90px;object-fit:cover;display:block;border-radius:7px;cursor:pointer;';
-      img.onerror=()=>img.remove();
-      img.onclick=()=>sendGif(full,tiny);
-      grid.appendChild(img);
-    });
-    const old=grid.querySelector('.lm-gif');if(old)old.remove();
-    if(d.results.length>=limit){
-      const btn=document.createElement('div');btn.className='lm-gif';
-      btn.style.cssText='grid-column:1/-1;text-align:center;padding:10px;color:var(--txt2);font-size:14px;cursor:pointer;border:1px solid var(--p4);border-radius:8px;margin-top:4px;';
-      btn.textContent='Ещё GIF...';btn.onclick=()=>{gifPage++;loadGifs(lastGifQ,true);};grid.appendChild(btn);
-    }
-  }catch(e){if(!append)grid.innerHTML=`<div style="color:#ef9a9a;font-size:12px;padding:14px;text-align:center;grid-column:1/-1;">⚠ Ошибка: ${e.message}</div>`;}
+/* GIF */
+function openGif(){if(!CC)return toast('Сначала открой чат','err');om2('gifMo');document.getElementById('gifSearchI').value='';loadGifs('привет');}
+function searchGif(q){clearTimeout(gifTO);gifTO=setTimeout(()=>loadGifs(q||'hello'),600);}
+async function loadGifs(q){
+  const grid=document.getElementById('gifGrid');grid.innerHTML='<div style="color:var(--txt3);font-size:12px;padding:10px;">Загрузка...</div>';
+  try{const r=await fetch(`https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=${encodeURIComponent(q)}&limit=9&rating=pg-13`);const d=await r.json();grid.innerHTML='';if(!d.data||!d.data.length){grid.innerHTML='<div style="color:var(--txt3);font-size:12px;padding:10px;">Ничего</div>';return;}d.data.forEach(g=>{const img=document.createElement('img');img.src=g.images.fixed_height_small.url;img.loading='lazy';img.onclick=()=>sendGif(g.images.original.url,g.images.fixed_height_small.url);grid.appendChild(img);});}catch(e){grid.innerHTML='<div style="color:#ef9a9a;font-size:12px;padding:10px;">Ошибка</div>';}
 }
-async function sendGif(url,preview){if(!CC)return;cm2('gifMo');const msg={from:CU.id,to:CC.id,type:'gif',gifUrl:url,gifPreview:preview||url,text:'🎬 GIF',timestamp:Date.now(),read:false};contactLastMsgCache[CC.id]=null;try{await push(ref(db,'messages'),msg);if(S.sound)playBeep();toast('✓ GIF!','ok');}catch(e){toast('Ошибка','err');}}
-
-function quickGif(q){document.getElementById('gifSearchI').value=q;gifPage=0;lastGifQ=q;loadGifs(q);}
+async function sendGif(url,preview){if(!CC)return;cm2('gifMo');const msg={from:CU.id,to:CC.id,type:'gif',gifUrl:url,gifPreview:preview||url,text:'🎬 GIF',timestamp:Date.now(),read:false};contactLastMsgCache[CC.id]=null;try{await push(ref(db,'messages'),msg);if(S.sound)playBeep();}catch(e){toast('Ошибка','err');}}
 
 /* STICKERS */
 const STICKERS=['🤣','😭','💀','🔥','❤️‍🔥','🥴','😤','🤯','🤌','💅','🐐','👀','🫡','🤡','💩','🦾','😈','👁️','🎭','🤫','😎','🥶','🤤','😏','💣','🕶️','🫶','🙌','🫠','😵‍💫','🤷','🦋','🌚','⚡','👾','🎮','🏆','🎯','🔮','💎','🌈','🍕','🎵','🚀','🛸','🌙','☠️','🦊','🐱'];
